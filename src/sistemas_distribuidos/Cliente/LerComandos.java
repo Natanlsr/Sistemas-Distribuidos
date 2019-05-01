@@ -36,7 +36,7 @@ public class LerComandos implements Runnable {
     
     
     //Retorna false caso a thread tenha q parar ou false caso contrario
-    public synchronized  boolean validarComandos(String comando,PrintStream saida){
+    public synchronized  void validarComandos(String comando,PrintStream saida){
         String aux;
         aux = comando.toLowerCase();
         boolean flag = true;
@@ -115,7 +115,7 @@ public class LerComandos implements Runnable {
                 System.out.println("Comando nao executado tente novamente");
               
             }
-            return fi;
+           
     }
             
             
@@ -136,8 +136,10 @@ public class LerComandos implements Runnable {
             if(this.teste){
                 try {
                     saida = new PrintStream(this.cliente.getOutputStream());
-                    validarComandos(this.comando,saida);
-                    validarComandos("quit",saida);
+                     validarComandos(this.comando,saida);
+                     validarComandos("quit",saida);
+                     break;
+                    
                 } catch (IOException ex) {
                     Logger.getLogger(LerComandos.class.getName()).log(Level.SEVERE, null, ex);
                     
