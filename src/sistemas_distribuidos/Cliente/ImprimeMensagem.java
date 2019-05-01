@@ -54,8 +54,6 @@ public class ImprimeMensagem implements Runnable{
                         verifica = true;
                         System.out.println(s.nextLine());
                         this.com.FinalLeitura();
-                        break;
-
                     }
                 }
                 if(!verifica){
