@@ -36,14 +36,14 @@ public class Teste {
             
             comandos.add("INSERT 1 NATAN");
             comandos.add("UPDATE 1 TESTE");
-            comandos.add("INSERT 1 JOAO");
+            comandos.add("INSERT 3 JOAO");
             comandos.add("DELETE 1");
             comandos.add("UPDATE 1 MARCELO");
-            comandos.add("INSERT 2 JOAO");
             
-            for(int i =0;i<6;i++){
+            for(int i =0;i<5;i++){
                 Cliente c = new Cliente(host, porta,true,comandos.get(i));
                 c.executa();
+                
             }
             
 

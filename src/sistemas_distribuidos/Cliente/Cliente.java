@@ -12,7 +12,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 
-public class Cliente{
+public class Cliente {
     private int porta;
     private String host;
     private ComunicaThread com = new ComunicaThread();
@@ -20,7 +20,7 @@ public class Cliente{
     private String comando; //Para testes
     
     
-    public Cliente(String host,int porta,boolean teste,String comando){
+    public Cliente(String host,int porta,boolean teste,String comando) {
         this.porta = porta;
         this.teste = teste;
         this.host = host;
@@ -59,7 +59,7 @@ public class Cliente{
             System.out.println("Erro ao tentar conectar no servidor,verifica o ip e portas");
             System.exit(0);
         }
-        ImprimeMensagem imprimir = new ImprimeMensagem(cliente.getInputStream(),this.com);
+        ImprimeMensagem imprimir = new ImprimeMensagem(cliente.getInputStream(),this.com,this.teste);
         Thread im = new Thread(imprimir);
         im.start();
         //Lendo mensagem do teclado e mandando para o servidor

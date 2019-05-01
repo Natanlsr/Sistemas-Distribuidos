@@ -14,10 +14,12 @@ public class ImprimeMensagem implements Runnable{
     private InputStream servidor;
     ComunicaThread com;
     private boolean exit = false;
+    private boolean teste;
        
-    public ImprimeMensagem(InputStream servidor,ComunicaThread com){
+    public ImprimeMensagem(InputStream servidor,ComunicaThread com,boolean teste){
         this.servidor = servidor;
         this.com = com;
+        this.teste = teste;
     }
     
     //Imprime mensagem ao receber do servidor
@@ -30,8 +32,9 @@ public class ImprimeMensagem implements Runnable{
 
             while(true){
                 verifica = false;
+    
                 this.com.tentaExecutar();
-                
+     
                 if(this.com.morta){
                     this.stop();
                     break;
@@ -51,6 +54,7 @@ public class ImprimeMensagem implements Runnable{
                         verifica = true;
                         System.out.println(s.nextLine());
                         this.com.FinalLeitura();
+                        break;
 
                     }
                 }
@@ -59,6 +63,7 @@ public class ImprimeMensagem implements Runnable{
                     this.stop();
                     break;
                 }
+           
             }
         }
         

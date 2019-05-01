@@ -41,7 +41,7 @@ public class ReceberMensagem implements Runnable{
                 while(s.hasNextLine()){
                     comando = s.nextLine();
                     Comando c = new Comando(this.cliente,comando);
-                    if(comando.equals("quit")){
+                    if(comando.toLowerCase().equals("quit")){
                         PrintStream cliente_retorno = new PrintStream(cliente.getOutputStream());
                         cliente_retorno.println("Quit Recebido");
                         this.stop();
@@ -51,7 +51,7 @@ public class ReceberMensagem implements Runnable{
                     }
                     //cliente_retorno.println(servidor.processaComando(s.nextLine()));
                 }
-                s.close();
+                //s.close();
             } catch (IOException ex) {
                 this.stop();
        

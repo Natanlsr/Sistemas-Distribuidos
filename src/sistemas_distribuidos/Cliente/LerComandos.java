@@ -98,7 +98,6 @@ public class LerComandos implements Runnable {
                 case "quit":
                     //System.out.println("Programa finalizado");
                     this.com.Matar();
-                    this.com.indicaFinal();
                     break;
                     
                 default:

@@ -6,7 +6,7 @@ public class ComunicaThread {
     public boolean finalizada = false;
     public boolean morta = false;
     
-     public synchronized void tentaExecutar(){
+    public synchronized void tentaExecutar(){
         while(!this.finalizada){
             try{
                 wait();
